@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+
+{% block title %}Request Blood{% endblock %}
+
+{% block content %}
+    <h2 class="mb-4">Request Blood</h2>
+    <form id="registerForm" action="{{ url_for('register') }}" method="post">
+        <div class="form-group">
+            <label for="name">Your Name:</label>
+            <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="blood_type">Blood Type Required:</label>
+            <select id="blood_type" name="blood_type" class="form-control" required>
+                <option value="" disabled selected>Select the required blood type</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="contact_email">Your Email:</label>
+            <input type="email" id="contact_email" name="contact_email" class="form-control" placeholder="Enter your email" required>
+        </div>
+
+        <button type="submit" class="btn btn-danger">Submit</button>
+    </form>
+{% endblock %}

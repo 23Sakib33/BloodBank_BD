@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block title %}Donors{% endblock %}
+
+{% block content %}
+    <h2 class="mb-4">Registered Donors</h2>
+    {% for blood_type, donor_list in grouped_donors.items() %}
+        <h3>Blood Type: {{ blood_type }}</h3>
+        <ul class="list-group">
+            {% for donor in donor_list %}
+                <li class="list-group-item">
+                    <strong>{{ donor.name }}</strong> - Contact: <a href="mailto:{{ donor.contact_email }}">{{ donor.contact_email }}</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+{% endblock %}
